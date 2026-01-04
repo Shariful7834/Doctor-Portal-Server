@@ -116,7 +116,7 @@ async function run() {
       console.log("inside booking api", decoded);
 
       if (decoded.email !== req.query.email) {
-        res.status(401).send({ message: "Unauthorized access" });
+        return res.status(401).send({ message: "Unauthorized access" });
       }
       const email = req.query.email;
       const query = {
